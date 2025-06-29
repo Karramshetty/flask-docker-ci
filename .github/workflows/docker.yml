@@ -17,13 +17,14 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: 📦 Install dependencies
-        run: |
-          pip install -r requirements.txt
+      - name: 📦 Install dependencies and pytest
+  run: |
+    pip install -r requirements.txt
+    pip install pytest
 
-      - name: ✅ Run tests
-        run: |
-          pytest
+- name: ✅ Run tests
+  run: |
+    pytest
 
       - name: 🐳 Log in to Docker Hub
         uses: docker/login-action@v3
